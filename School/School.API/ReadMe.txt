@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Server=.\SQLExpress;Database=School;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -Force
