@@ -38,7 +38,13 @@ namespace School.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "School.API", Version = "v1" });
+
+                var fileComment = System.IO.Path.Combine(System.AppContext.BaseDirectory, "School.Api.xml");
+                if (System.IO.File.Exists(fileComment))
+                    c.IncludeXmlComments(fileComment);
             });
+
+
 
             services.AddTransient<IClassRoomBL, ClassRoomBL>();
             services.AddTransient<ICourseBL, CourseBL>();

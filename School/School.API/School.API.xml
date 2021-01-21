@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>School.API</name>
+    </assembly>
+    <members>
+        <member name="M:School.API.Controllers.ClassRoomController.GetById(System.Int32)">
+            <summary>
+            Lecture d'une classe sur base de son Id
+            </summary>
+            <param name="id">Numéro de la Classe à récupérer</param>
+            <returns>Le descriptif de la classe</returns>
+            <remarks>
+            Pas de remarques particulière.
+            </remarks>
+        </member>
+    </members>
+</doc>

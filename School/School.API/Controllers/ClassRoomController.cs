@@ -20,14 +20,23 @@ namespace School.API.Controllers
             _classRoomBL = classRoomBL;
         }
 
+
         [HttpGet]
         public ActionResult<IEnumerable<ClassRoomDTO>> GetAll()
         {
             return Ok(_classRoomBL.GetAll());
         }
 
+        /// <summary>
+        /// Lecture d'une classe sur base de son Id
+        /// </summary>
+        /// <param name="id">Numéro de la Classe à récupérer</param>
+        /// <returns>Le descriptif de la classe</returns>
+        /// <remarks>
+        /// Pas de remarques particulière.
+        /// </remarks>
         [HttpGet("id")]
-        public ActionResult<ClassRoomDTO> Get(int id)
+        public ActionResult<ClassRoomDTO> GetById(int id)
         {
             return Ok(_classRoomBL.GetById(id));
         }
