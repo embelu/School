@@ -8,7 +8,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using School.API.BusinessLogic.Implementations;
+using School.API.BusinessLogic.Interfaces;
 using School.API.Entities;
+using School.API.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +39,14 @@ namespace School.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "School.API", Version = "v1" });
             });
+
+            services.AddTransient<IClassRoomBL, ClassRoomBL>();
+            services.AddTransient<ICourseBL, CourseBL>();
+            services.AddTransient<IStudentBL, StudentBL>();
+
+            services.AddTransient<IClassRoomRepository, ClassRoomRepository>();
+            services.AddTransient<ICourseRepository, CourseRepository>();
+            services.AddTransient<IStudentRepository, StudentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
