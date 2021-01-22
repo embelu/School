@@ -58,5 +58,26 @@ namespace School.API.Controllers
         {
             return Ok(_classRoomBL.Put(classRoomDTO));
         }
+
+        [HttpGet("Integer")]
+        [Obsolete]
+        public ActionResult<int> GetInteger()
+        {
+            return Ok(2);
+        }
+
+        [HttpGet("String")]
+        [ApiExplorerSettings(IgnoreApi = true)]
+        public ActionResult<string> GetString()
+        {
+            return Ok("Coucou");
+        }
+
+        [HttpGet("Bool")]
+        [ApiExplorerSettings(GroupName = "v2")]
+        public ActionResult<bool> GetBool()
+        {
+            return Ok(true);
+        }
     }
 }
